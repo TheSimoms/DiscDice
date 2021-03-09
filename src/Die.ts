@@ -6,16 +6,16 @@ export class Die {
     }
 
     static newDie() {
-        return new Die([""]);
+        return new Die(['']);
     }
 
     addSide(): void {
-        this.sides.push("");
+        this.sides.push('');
     }
 
     removeSide(index: number) {
         if (this.sides.length == 1) {
-            this.sides[0] = "";
+            this.sides[0] = '';
         } else {
             this.sides.splice(index, 1);
         }

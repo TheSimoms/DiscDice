@@ -1,5 +1,5 @@
-import { writable } from "svelte/store";
-import { Die } from "./Die";
+import { writable } from 'svelte/store';
+import { Die } from './Die';
 
 const defaultSides = [
     ['Backhand', 'Forehand', 'Hyzer', 'Anhyzer', 'Roller', 'Wildcard'],
