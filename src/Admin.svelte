@@ -4,13 +4,18 @@
 </script>
 
 <style>
+	.heading {
+		padding-left: 0.25em;
+	}
+
 	.dice {
 		display: grid;
 	}
 </style>
 
 <div class="dice">
-	{#each $dice as die}
+	{#each $dice as die, index}
+		<h3 class="heading">Die {index + 1}</h3>
 		<AdminDie {die} />
 	{/each}
 </div>
