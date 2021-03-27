@@ -15,18 +15,6 @@
 		float: right;
 		width: 2.5em;
 	}
-
-	.open {
-		visibility: visible;
-		opacity: 1;
-		transition: visibility 0s, opacity 0.5s linear;
-	}
-	.closed {
-		visibility: hidden;
-		opacity: 0;
-		transition: visibility 0s, opacity 0.1s linear;
-		height: 0px;
-	}
 </style>
 
 <section>
@@ -34,7 +22,7 @@
 		<Fa icon={faBars} />
 	</button>
 
-	<div  class={open ? 'open' : 'closed'}>
+	{#if open}
 		<Admin />
-	</div>
+	{/if}
 </section>

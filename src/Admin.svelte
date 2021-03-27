@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import { dice, addDie, resetDice } from './store'
 	import AdminDie from './AdminDie.svelte'
 </script>
@@ -13,12 +14,14 @@
 	}
 </style>
 
-<div class="dice">
-	{#each $dice as die, index}
-		<h3 class="heading">Die {index + 1}</h3>
-		<AdminDie {die} />
-	{/each}
-</div>
+<div in:fade="{{delay: 0, duration: 300}}">
+	<div class="dice">
+		{#each $dice as die, index}
+			<h3 class="heading">Die {index + 1}</h3>
+			<AdminDie {die} />
+		{/each}
+	</div>
 
-<button on:click="{addDie}">Add die</button>
-<button on:click="{resetDice}">Reset dice</button>
+	<button on:click="{addDie}">Add die</button>
+	<button on:click="{resetDice}">Reset dice</button>
+</div>
