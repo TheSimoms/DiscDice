@@ -3,6 +3,7 @@ FROM node:14-alpine
 WORKDIR /usr/src/app
 
 COPY rollup.config.js ./
+COPY tsconfig.json ./
 COPY package*.json ./
 
 RUN npm install
