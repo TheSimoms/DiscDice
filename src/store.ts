@@ -9,8 +9,8 @@ const key = 'sides';
 
 export const defaultDice = () => defaultSides.map(sides => new Die(sides.slice()));
 
-const storedSides = JSON.parse(localStorage.getItem(key)) as string[][];
-const storedDice = storedSides === null ? defaultDice() : storedSides.map(sides => new Die(sides));
+const storedSides = localStorage.getItem(key);
+const storedDice = storedSides === null ? defaultDice() : (JSON.parse(storedSides) as string[][]).map(sides => new Die(sides));
 
 export const dice = writable(storedDice);
 

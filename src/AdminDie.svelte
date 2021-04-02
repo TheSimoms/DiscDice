@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { _ } from 'svelte-i18n';
+
     import Fa from 'svelte-fa'
     import { faTimes } from '@fortawesome/free-solid-svg-icons'
 	import { dice, dieUpdated } from './store'
@@ -65,7 +67,7 @@
     </div>
 
     <div id="buttons">
-        <button on:click={addSide}>Add side</button>
-        <button on:click={removeDie}>Remove die</button>
+        <button on:click={addSide}>{$_('die.admin.add_side')}</button>
+        <button on:click={removeDie}>{$_('die.admin.remove_die')}</button>
     </div>
 </div>
