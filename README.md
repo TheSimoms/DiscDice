@@ -2,6 +2,7 @@
 
 This is a simple web based disc golf dice app. Roll the dice to determine your next throw.
 
+https://discgolfdice.no/
 
 ## Get started
 
