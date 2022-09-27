@@ -1,15 +1,12 @@
 {
     "die": {
-        "admin": {
-            "add_die": "Add die",
-            "reset_dice": "Reset dice",
-            "add_side": "Add side",
-            "remove_die": "Remove die",
-            "die": "Die"
-        },
         "roll": {
             "roll_dice": "Roll dice",
             "previous_rolls": "Previous rolls"
+        },
+        "result": {
+            "technique": "Technique",
+            "disc": "Disc"
         }
     }
 }

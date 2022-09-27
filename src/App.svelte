@@ -1,26 +1,24 @@
 <script lang="ts">
-	import { init, getLocaleFromNavigator, addMessages } from 'svelte-i18n';
+    import { init, getLocaleFromNavigator, addMessages } from 'svelte-i18n';
 
-	import en from '../public/lang/en.json';
-	import no from '../public/lang/no.json';
+    import en from '../public/lang/en.json';
+    import no from '../public/lang/no.json';
 
-	addMessages('en-UK', en);
-	addMessages('nb', no);
-	addMessages('nn', no);
-	addMessages('no', no);
-	addMessages('nb-NO', no);
-	addMessages('nn-NO', no);
+    addMessages('en-UK', en);
+    addMessages('nb', no);
+    addMessages('nn', no);
+    addMessages('no', no);
+    addMessages('nb-NO', no);
+    addMessages('nn-NO', no);
 
-	init({
-		fallbackLocale: 'en-UK',
-		initialLocale: getLocaleFromNavigator(),
-	});
+    init({
+        fallbackLocale: 'en-UK',
+        initialLocale: getLocaleFromNavigator(),
+    });
 
-	import Menu from './Menu.svelte'
-	import RollDice from './RollDice.svelte'
+    import Navbar from './Navbar.svelte'
+    import RollDice from './RollDice.svelte'
 </script>
 
-<main>
-	<Menu />
-	<RollDice />
-</main>
+<Navbar />
+<RollDice />

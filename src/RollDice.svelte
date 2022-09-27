@@ -1,35 +1,43 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+    import { _ } from 'svelte-i18n';
+    import Button, { Label } from '@smui/button';
+    import List from '@smui/list';
 
-	import { dice } from './store'
+    import { Dice } from './Dice';
+    import type { Roll } from './Roll';
 
-    let latestRoll: string[] = [];
-    let rollHistory: string[][] = [];
+    import RollResult from './RollResult.svelte';
+
+    let latestRoll: Roll | undefined = undefined;
+    let rollHistory: Roll[] = [];
 
     function rollDice(): void {
-        if (latestRoll.length) {
+        if (latestRoll) {
             rollHistory = [...rollHistory, latestRoll];
         }
 
-        latestRoll = $dice.map(die => die.roll());
+        latestRoll = Dice.roll();
     }
 </script>
 
 <section>
-    <button on:click={rollDice}>{$_('die.roll.roll_dice')}</button>
+    <Button on:click={rollDice} variant="raised">
+        <Label>{$_('die.roll.roll_dice')}</Label>
+    </Button>
 
-    <ul>
-        {#each latestRoll as roll}
-            <li>{roll}</li>
-        {/each}
-    </ul>
+    {#if latestRoll}
+        <List twoLine>
+            <RollResult roll={latestRoll} />
+        </List>
+    {/if}
 
     {#if rollHistory.length}
-        {$_('die.roll.previous_rolls')}:
+        <h3>{$_('die.roll.previous_rolls')}:</h3>
+
+        <List twoLine>
+            {#each [...rollHistory].reverse().slice(0, 69) as roll}
+                <RollResult {roll} />
+            {/each}
+        </List>
     {/if}
-    <ul>
-        {#each [...rollHistory].reverse().slice(0, 69) as rolls}
-            <li>{rolls.join(', ')}</li>
-        {/each}
-    </ul>
 </section>

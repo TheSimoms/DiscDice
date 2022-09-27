@@ -1,15 +1,12 @@
 {
     "die": {
-        "admin": {
-            "add_die": "Legg til terning",
-            "reset_dice": "Nullstill terningene",
-            "add_side": "Legg til side",
-            "remove_die": "Fjern terning",
-            "die": "Terning"
-        },
         "roll": {
             "roll_dice": "Trill terningene",
             "previous_rolls": "Tidligere terningkast"
+        },
+        "result": {
+            "technique": "Teknikk",
+            "disc": "Disk"
         }
     }
 }

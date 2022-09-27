@@ -12,6 +12,7 @@ COPY ./src ./src
 COPY ./public ./public
 
 RUN npm run build
+RUN npm run prepare
 
 EXPOSE 5000
 
